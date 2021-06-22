@@ -1,5 +1,5 @@
 package app.services;
 
-public class PremierLeagueManager {
+public class PremierLeagueManager implements LeagueManager {
 
 }
