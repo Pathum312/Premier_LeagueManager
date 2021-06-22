@@ -14,4 +14,7 @@ public interface LeagueManager {
     // Edits changes to an club after it was added
     void updateClub();
 
+    // Prints the league table in descending order
+    void printDescendingLeague();
+
 }

@@ -6,6 +6,7 @@ public class Score {
     private int TeamTwoScore;
     private String Teams;
 
+    // This gets the scores of boths teams
     public Score(int teamOneScore, int teamTwoScore, String teamOneName, String teamTwoName) {
         this.TeamOneScore = teamOneScore;
         this.TeamTwoScore = teamTwoScore;
@@ -16,6 +17,7 @@ public class Score {
         return Teams;
     }
 
+    // The name converts into this format "nameOne vs nameTwo"
     public void setTeams(String teamOneName, String teamTwoName) {
         Teams = teamOneName + " vs " + teamTwoName;
     }

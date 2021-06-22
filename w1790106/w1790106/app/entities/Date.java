@@ -6,6 +6,7 @@ public class Date {
     private int month;
     private int year;
 
+    // Can set the date for matches in xx.xx.xxxx format
     public Date(int day, int month, int year) {
         this.day = day;
         this.month = month;
