@@ -25,6 +25,8 @@ public class methods {
                 }
 
             }
+            scan.close();
+            fis.close();
         } catch (Exception e) {
             e.getStackTrace();
         }

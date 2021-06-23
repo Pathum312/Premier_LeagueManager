@@ -52,7 +52,7 @@ public class runTimeMenu {
                 break;
             case 6:
                 System.out.println();
-                System.out.println("Thank you for using Primier league.");
+                System.out.println("Thank you for using Premier league.");
                 System.out.println("Goodbye !!!");
                 break;
         }
