@@ -42,8 +42,8 @@ public class runTimeMenu {
                 break;
             case 4:
                 System.out.println();
-                System.out.println("Print");
-
+                plm.printLeague();
+                menu();
                 break;
             case 5:
                 System.out.println();
