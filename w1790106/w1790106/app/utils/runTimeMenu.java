@@ -32,13 +32,13 @@ public class runTimeMenu {
                 break;
             case 2:
                 System.out.println();
-                System.out.println("Delete");
+                plm.deleteClub();
                 menu();
                 break;
             case 3:
                 System.out.println();
-                System.out.println("Update");
-
+                plm.updateClub();
+                menu();
                 break;
             case 4:
                 System.out.println();
@@ -48,7 +48,7 @@ public class runTimeMenu {
             case 5:
                 System.out.println();
                 System.out.println("Print descending");
-
+                menu();
                 break;
             case 6:
                 System.out.println();
