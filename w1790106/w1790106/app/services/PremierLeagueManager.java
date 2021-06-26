@@ -334,6 +334,7 @@ public class PremierLeagueManager implements LeagueManager {
         }
     }
 
+    // Runs the angular ui directly from the command-line program
     public void runGUI() {
         try {
             Runtime.getRuntime().exec("cmd /c start cmd.exe /K \" sbt run\"");
