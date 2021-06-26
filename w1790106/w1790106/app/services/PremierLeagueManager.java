@@ -300,7 +300,6 @@ public class PremierLeagueManager implements LeagueManager {
             }
         }
 
-        System.out.println();
         System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
         System.out.println();
         System.out.print("| Club Name | Location | Played | Won | Lost | Drawn | Goals | Received | Points |");
@@ -332,6 +331,14 @@ public class PremierLeagueManager implements LeagueManager {
             System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
             System.out.println();
 
+        }
+    }
+
+    public void runGUI() {
+        try {
+            Runtime.getRuntime().exec("cmd /c start cmd.exe /K \" sbt run\"");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

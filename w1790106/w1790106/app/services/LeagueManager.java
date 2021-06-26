@@ -17,4 +17,6 @@ public interface LeagueManager {
     // Prints the league table in descending order
     void printDescendingLeague();
 
+    void runGUI();
+
 }
