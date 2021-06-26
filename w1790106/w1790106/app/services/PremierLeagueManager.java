@@ -226,9 +226,15 @@ public class PremierLeagueManager implements LeagueManager {
 
     }
 
-    // Prints a table with the clubs in the league.txt
+    // Prints a table with a club in the league.txt
     public void printLeague() {
         methods m = new methods();
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the name of the club: ");
+        String clubName = input.nextLine();
+        System.out.println();
 
         // Returns a arraylist of all the clubs
         ArrayList<FootballClub> clubList = m.getClubList();
@@ -240,30 +246,40 @@ public class PremierLeagueManager implements LeagueManager {
         System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
         System.out.println();
         for (FootballClub i : clubList) {
-            System.out.print("| " + i.getClubName());
-            m.gap(9, i.getClubName().length());
-            System.out.print("| " + i.getLocation());
-            m.gap(8, i.getLocation().length());
-            System.out.print("| " + i.getPlayed());
-            m.gap(6, String.valueOf(i.getPlayed()).length());
-            System.out.print("| " + i.getWon());
-            m.gap(3, String.valueOf(i.getWon()).length());
-            System.out.print("| " + i.getLost());
-            m.gap(4, String.valueOf(i.getLost()).length());
-            System.out.print("| " + i.getDrawn());
-            m.gap(5, String.valueOf(i.getDrawn()).length());
-            System.out.print("| " + i.getGoalsScored());
-            m.gap(5, String.valueOf(i.getGoalsScored()).length());
-            System.out.print("| " + i.getGoalsRceived());
-            m.gap(8, String.valueOf(i.getGoalsRceived()).length());
-            System.out.print("| " + i.getPoints());
-            m.gap(6, String.valueOf(i.getPoints()).length());
-            System.out.print("|");
-            System.out.println();
-            System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
-            System.out.println();
+
+            if (clubName.equals(i.getClubName())) {
+                System.out.print("| " + i.getClubName());
+                m.gap(9, i.getClubName().length());
+                System.out.print("| " + i.getLocation());
+                m.gap(8, i.getLocation().length());
+                System.out.print("| " + i.getPlayed());
+                m.gap(6, String.valueOf(i.getPlayed()).length());
+                System.out.print("| " + i.getWon());
+                m.gap(3, String.valueOf(i.getWon()).length());
+                System.out.print("| " + i.getLost());
+                m.gap(4, String.valueOf(i.getLost()).length());
+                System.out.print("| " + i.getDrawn());
+                m.gap(5, String.valueOf(i.getDrawn()).length());
+                System.out.print("| " + i.getGoalsScored());
+                m.gap(5, String.valueOf(i.getGoalsScored()).length());
+                System.out.print("| " + i.getGoalsRceived());
+                m.gap(8, String.valueOf(i.getGoalsRceived()).length());
+                System.out.print("| " + i.getPoints());
+                m.gap(6, String.valueOf(i.getPoints()).length());
+                System.out.print("|");
+                System.out.println();
+                System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
+                System.out.println();
+            }
         }
 
+    }
+
+    public void printDescendingLeague() {
+        methods m = new methods();
+
+        // Returns a arraylist of all the clubs
+        ArrayList<FootballClub> clubList = m.getClubList();
     }
 
 }

@@ -47,7 +47,7 @@ public class runTimeMenu {
                 break;
             case 5:
                 System.out.println();
-                System.out.println("Print descending");
+                plm.printDescendingLeague();
                 menu();
                 break;
             case 6:
