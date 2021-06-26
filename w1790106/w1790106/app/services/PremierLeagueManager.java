@@ -280,6 +280,59 @@ public class PremierLeagueManager implements LeagueManager {
 
         // Returns a arraylist of all the clubs
         ArrayList<FootballClub> clubList = m.getClubList();
+
+        FootballClub temp;
+
+        // Sorts the arraylist in descending order
+        for (int i = 0; i < clubList.size(); i++) {
+            for (int j = i + 1; j < clubList.size(); j++) {
+                if (clubList.get(j).getPoints() > clubList.get(i).getPoints()) {
+                    temp = clubList.get(i);
+                    clubList.set(i, clubList.get(j));
+                    clubList.set(j, temp);
+                } else if (clubList.get(j).getPoints() == clubList.get(i).getPoints()) {
+                    if (clubList.get(j).getGoalsScored() > clubList.get(i).getGoalsScored()) {
+                        temp = clubList.get(i);
+                        clubList.set(i, clubList.get(j));
+                        clubList.set(j, temp);
+                    }
+                }
+            }
+        }
+
+        System.out.println();
+        System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
+        System.out.println();
+        System.out.print("| Club Name | Location | Played | Won | Lost | Drawn | Goals | Received | Points |");
+        System.out.println();
+        System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
+        System.out.println();
+        for (FootballClub i : clubList) {
+
+            System.out.print("| " + i.getClubName());
+            m.gap(9, i.getClubName().length());
+            System.out.print("| " + i.getLocation());
+            m.gap(8, i.getLocation().length());
+            System.out.print("| " + i.getPlayed());
+            m.gap(6, String.valueOf(i.getPlayed()).length());
+            System.out.print("| " + i.getWon());
+            m.gap(3, String.valueOf(i.getWon()).length());
+            System.out.print("| " + i.getLost());
+            m.gap(4, String.valueOf(i.getLost()).length());
+            System.out.print("| " + i.getDrawn());
+            m.gap(5, String.valueOf(i.getDrawn()).length());
+            System.out.print("| " + i.getGoalsScored());
+            m.gap(5, String.valueOf(i.getGoalsScored()).length());
+            System.out.print("| " + i.getGoalsRceived());
+            m.gap(8, String.valueOf(i.getGoalsRceived()).length());
+            System.out.print("| " + i.getPoints());
+            m.gap(6, String.valueOf(i.getPoints()).length());
+            System.out.print("|");
+            System.out.println();
+            System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
+            System.out.println();
+
+        }
     }
 
 }
