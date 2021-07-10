@@ -17,6 +17,9 @@ public interface LeagueManager {
     // Prints the league table in descending order
     void printDescendingLeague();
 
+    // Add a match and update the clubs details
+    void addMatch();
+
     // Runs the angular ui directly from the command-line program
     void runGUI();
 

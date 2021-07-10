@@ -1,6 +1,9 @@
 package app.entities;
 
-public class Match {
+import java.io.Serializable;
+
+public class Match implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private Date date;
     private Score score;

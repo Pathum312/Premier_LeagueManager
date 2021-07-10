@@ -3,6 +3,9 @@ package app.services;
 import java.io.*;
 import java.util.*;
 import app.entities.FootballClub;
+import app.entities.Match;
+import app.entities.Date;
+import app.entities.Score;
 import app.utils.methods;
 
 public class PremierLeagueManager implements LeagueManager {
@@ -332,6 +335,68 @@ public class PremierLeagueManager implements LeagueManager {
             System.out.println();
 
         }
+    }
+
+    // Add a match to match.txt and update the clubs details in league.txt
+    public void addMatch() {
+        methods m = new methods();
+
+        Scanner input = new Scanner(System.in);
+
+        // Getting the first club's name
+        System.out.print("Enter the name of the frist club: ");
+        String clubNameOne = input.nextLine();
+        System.out.println();
+
+        // Getting the second club's name
+        System.out.print("Enter the name of the second club: ");
+        String clubNameTwo = input.nextLine();
+        System.out.println();
+
+        // Getting the first club's score
+        System.out.print("Enter the first club's score: ");
+        int clubNameOneScore = input.nextInt();
+        System.out.println();
+
+        // Getting the second club's score
+        System.out.print("Enter the second club's score: ");
+        int clubNameTwoScore = input.nextInt();
+        System.out.println();
+
+        // Getting the day
+        System.out.print("Enter the day: ");
+        int day = input.nextInt();
+        System.out.println();
+
+        // Getting the month
+        System.out.print("Enter the month: ");
+        int month = input.nextInt();
+        System.out.println();
+
+        // Getting the year
+        System.out.print("Enter the year: ");
+        int year = input.nextInt();
+        System.out.println();
+
+        Match match = new Match(new Date(day, month, year),
+                new Score(clubNameOneScore, clubNameTwoScore, clubNameOne, clubNameTwo));
+
+        // Adding match to match.txt
+        try {
+            FileOutputStream fos = new FileOutputStream(new File("app/database/match.txt"), true);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(match);
+            oos.close();
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
+
+        // Updates the clubs details after match is added
+        m.updateClubAfterMatch(clubNameOneScore, clubNameTwoScore, clubNameOne, clubNameTwo);
+
+        System.out.println("Successfully added to match.txt !!!");
+        System.out.println();
+
     }
 
     // Runs the angular ui directly from the command-line program

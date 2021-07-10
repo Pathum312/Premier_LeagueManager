@@ -19,8 +19,9 @@ public class runTimeMenu {
         System.out.println("3. Update a club");
         System.out.println("4. Print the league table");
         System.out.println("5. Print the league table in descending order");
-        System.out.println("6. GUI");
-        System.out.println("7. Exit");
+        System.out.println("6. Add a match");
+        System.out.println("7. GUI");
+        System.out.println("8. Exit");
         System.out.println();
         System.out.print("What is your choice? ");
         int choice = input.nextInt();
@@ -53,10 +54,15 @@ public class runTimeMenu {
                 break;
             case 6:
                 System.out.println();
-                plm.runGUI();
+                plm.addMatch();
                 menu();
                 break;
             case 7:
+                System.out.println();
+                plm.runGUI();
+                menu();
+                break;
+            case 8:
                 System.out.println();
                 System.out.println("Thank you for using Premier league.");
                 System.out.println("Goodbye !!!");
