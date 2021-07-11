@@ -8,6 +8,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { PointsPageComponent } from './points-page/points-page.component';
 import { GoalsPageComponent } from './goals-page/goals-page.component';
 import { WinsPageComponent } from './wins-page/wins-page.component';
+import { MatchesPageComponent } from './matches-page/matches-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { WinsPageComponent } from './wins-page/wins-page.component';
     HomePageComponent,
     PointsPageComponent,
     GoalsPageComponent,
-    WinsPageComponent
+    WinsPageComponent,
+    MatchesPageComponent
   ],
   imports: [
     BrowserModule,

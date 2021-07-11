@@ -134,4 +134,22 @@ public class HomeController extends Controller {
         return ok(jsonData);
     }
 
+    public Result getMatch() {
+
+        methods m = new methods();
+
+        // Returns a arraylist of all the clubs
+        ArrayList<Match> matchList = m.getMatchList();
+
+        for (Match match : matchList) {
+            JsonNode Json = play.libs.Json.toJson(match);
+            logger.debug("In FootBallController.getPoints(), result is: {}", Json.toString());
+        }
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        JsonNode jsonData = mapper.convertValue(matchList, JsonNode.class);
+        return ok(jsonData);
+    }
+
 }

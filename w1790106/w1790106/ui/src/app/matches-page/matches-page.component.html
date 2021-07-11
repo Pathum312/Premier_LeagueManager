@@ -1,0 +1,49 @@
+<!--Main Container-->
+<div class="container">
+  <!--  Side navigation cards and title-->
+  <div class="navigation">
+    <!--    Main title-->
+    <div class="app-title">
+      <p class="title">
+        <img src="assets/Vector.svg" width="30px" height="30px" />Football
+        System
+      </p>
+    </div>
+    <!--    Nav cards-->
+    <div class="nav-buttons">
+      <div class="cards">
+        <div class="card">Table in points order</div>
+        <div class="card">Table in goals order</div>
+        <div class="card">Table in wins order</div>
+        <div class="card">Generate a random match</div>
+        <div class="card">Match table</div>
+      </div>
+    </div>
+  </div>
+  <!--  Main body-->
+  <div class="main">
+    <!--    Main body title-->
+    <div class="body-title">
+      <p class="topic" routerLink="">Home/ Match Table</p>
+    </div>
+    <!--    Main content-->
+    <div class="content">
+      <table>
+        <tr>
+          <th>Clubs</th>
+          <th>Score</th>
+          <th>Date</th>
+        </tr>
+        <tr *ngFor="let todo of todos">
+          <td>{{ todo.score.teams }}</td>
+          <td>
+            {{ todo.score.teamOneScore + " : " + todo.score.teamTwoScore }}
+          </td>
+          <td>
+            {{ todo.date.day + "/" + todo.date.month + "/" + todo.date.year }}
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
