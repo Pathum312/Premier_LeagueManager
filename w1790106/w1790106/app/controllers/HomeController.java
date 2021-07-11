@@ -95,4 +95,40 @@ public class HomeController extends Controller {
         return ok(jsonData);
     }
 
+    public Result getWon() {
+        methods m = new methods();
+
+        // Returns a arraylist of all the clubs
+        ArrayList<FootballClub> clubList = m.getClubList();
+
+        FootballClub temp;
+
+        // Sorts the arraylist in descending order of points
+        for (int i = 0; i < clubList.size(); i++) {
+            for (int j = i + 1; j < clubList.size(); j++) {
+                if (clubList.get(j).getWon() > clubList.get(i).getWon()) {
+                    temp = clubList.get(i);
+                    clubList.set(i, clubList.get(j));
+                    clubList.set(j, temp);
+                } else if (clubList.get(j).getWon() == clubList.get(i).getWon()) {
+                    if (clubList.get(j).getLost() < clubList.get(i).getLost()) {
+                        temp = clubList.get(i);
+                        clubList.set(i, clubList.get(j));
+                        clubList.set(j, temp);
+                    }
+                }
+            }
+        }
+
+        for (FootballClub f1 : clubList) {
+            JsonNode Json = play.libs.Json.toJson(f1);
+            logger.debug("In FootBallController.getPoints(), result is: {}", Json.toString());
+        }
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        JsonNode jsonData = mapper.convertValue(clubList, JsonNode.class);
+        return ok(jsonData);
+    }
+
 }
