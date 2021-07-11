@@ -23,6 +23,7 @@ public class HomeController extends Controller {
 
     private static final Logger logger = LoggerFactory.getLogger("controller");
 
+    // Sends json data with clubs in descending order of points
     public Result getPoints() {
         methods m = new methods();
 
@@ -59,6 +60,7 @@ public class HomeController extends Controller {
         return ok(jsonData);
     }
 
+    // Sends json data with clubs in descending order of goals
     public Result getGoals() {
         methods m = new methods();
 
@@ -95,6 +97,7 @@ public class HomeController extends Controller {
         return ok(jsonData);
     }
 
+    // Sends json data with clubs in descending order of wins
     public Result getWon() {
         methods m = new methods();
 
