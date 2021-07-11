@@ -134,6 +134,7 @@ public class HomeController extends Controller {
         return ok(jsonData);
     }
 
+    // Send the list of matches
     public Result getMatch() {
 
         methods m = new methods();

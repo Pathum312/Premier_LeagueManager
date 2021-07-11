@@ -242,11 +242,14 @@ public class PremierLeagueManager implements LeagueManager {
         // Returns a arraylist of all the clubs
         ArrayList<FootballClub> clubList = m.getClubList();
 
-        System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
+        System.out
+                .print("+----------------------+----------+--------+-----+------+-------+-------+----------+--------+");
         System.out.println();
-        System.out.print("| Club Name | Location | Played | Won | Lost | Drawn | Goals | Received | Points |");
+        System.out
+                .print("|      Club Name       | Location | Played | Won | Lost | Drawn | Goals | Received | Points |");
         System.out.println();
-        System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
+        System.out
+                .print("+----------------------+----------+--------+-----+------+-------+-------+----------+--------+");
         System.out.println();
         for (FootballClub i : clubList) {
 
@@ -271,7 +274,8 @@ public class PremierLeagueManager implements LeagueManager {
                 m.gap(6, String.valueOf(i.getPoints()).length());
                 System.out.print("|");
                 System.out.println();
-                System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
+                System.out.print(
+                        "+----------------------+----------+--------+-----+------+-------+-------+----------+--------+");
                 System.out.println();
             }
         }
@@ -303,16 +307,19 @@ public class PremierLeagueManager implements LeagueManager {
             }
         }
 
-        System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
+        System.out
+                .print("+----------------------+----------+--------+-----+------+-------+-------+----------+--------+");
         System.out.println();
-        System.out.print("| Club Name | Location | Played | Won | Lost | Drawn | Goals | Received | Points |");
+        System.out
+                .print("|      Club Name       | Location | Played | Won | Lost | Drawn | Goals | Received | Points |");
         System.out.println();
-        System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
+        System.out
+                .print("+----------------------+----------+--------+-----+------+-------+-------+----------+--------+");
         System.out.println();
         for (FootballClub i : clubList) {
 
             System.out.print("| " + i.getClubName());
-            m.gap(9, i.getClubName().length());
+            m.gap(20, i.getClubName().length());
             System.out.print("| " + i.getLocation());
             m.gap(8, i.getLocation().length());
             System.out.print("| " + i.getPlayed());
@@ -331,7 +338,8 @@ public class PremierLeagueManager implements LeagueManager {
             m.gap(6, String.valueOf(i.getPoints()).length());
             System.out.print("|");
             System.out.println();
-            System.out.print("+-----------+----------+--------+-----+------+-------+-------+----------+--------+");
+            System.out.print(
+                    "+----------------------+----------+--------+-----+------+-------+-------+----------+--------+");
             System.out.println();
 
         }
