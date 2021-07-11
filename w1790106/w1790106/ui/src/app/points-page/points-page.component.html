@@ -1,0 +1,57 @@
+<!--Main Container-->
+<div class="container">
+  <!--  Side navigation cards and title-->
+  <div class="navigation">
+    <!--    Main title-->
+    <div class="app-title">
+      <p class="title">
+        <img src="assets/Vector.svg" width="30px" height="30px" />Football
+        System
+      </p>
+    </div>
+    <!--    Nav cards-->
+    <div class="nav-buttons">
+      <div class="cards">
+        <div class="card">Table in points order</div>
+        <div class="card">Table in goals order</div>
+        <div class="card">Table in wins order</div>
+        <div class="card">Generate a random match</div>
+        <div class="card">Match table</div>
+      </div>
+    </div>
+  </div>
+  <!--  Main body-->
+  <div class="main">
+    <!--    Main body title-->
+    <div class="body-title">
+      <p class="topic" routerLink="">Home/ Points</p>
+    </div>
+    <!--    Main content-->
+    <div class="content">
+      <table>
+        <tr>
+          <th>Club Name</th>
+          <th>Location</th>
+          <th>Points</th>
+          <th>Matches Played</th>
+          <th>Matches Won</th>
+          <th>Matches Lost</th>
+          <th>Matches Drawn</th>
+          <th>Goals Scored</th>
+          <th>Goals Received</th>
+        </tr>
+        <tr *ngFor="let todo of todos">
+          <td>{{ todo.clubName }}</td>
+          <td>{{ todo.clubLocation }}</td>
+          <td>{{ todo.clubPoints }}</td>
+          <td>{{ todo.matchesPlayed }}</td>
+          <td>{{ todo.matchesWon }}</td>
+          <td>{{ todo.matchesLost }}</td>
+          <td>{{ todo.matchesDrawn }}</td>
+          <td>{{ todo.goalsScored }}</td>
+          <td>{{ todo.goalsReceived }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
